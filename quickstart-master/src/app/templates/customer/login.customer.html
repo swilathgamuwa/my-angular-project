@@ -1,0 +1,22 @@
+<div class="reg-wrapper">
+    <form #loginUserForm="ngForm" (ngSubmit)="loginUser(loginUserForm.value)" novalidate>  
+        <div class="container">
+            <label>
+                <b>Username</b>
+            </label>
+            <input type="text" placeholder="Enter Username" name="userName" id="userName" (ngModel)="username" required>
+            <em *ngIf="loginUserForm.controls.userName?.invalid && (loginUserForm.controls.userName?.touched || mouseoverLogin)">Required</em>
+            <label>
+                <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" (ngModel)="password" required>
+            <em *ngIf="loginUserForm.controls.password?.invalid  && (loginUserForm.controls.password?.touched || mouseoverLogin)">Required</em>
+
+            <button type="submit">Login</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
